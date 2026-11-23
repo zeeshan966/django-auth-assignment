@@ -1,0 +1,158 @@
+.site-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    border-bottom: 1px solid rgba(226, 232, 242, 0.8);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(18px);
+}
+
+.navbar-inner {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: 13px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ink);
+    font-size: 1.02rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    transition: transform 180ms ease;
+}
+
+.brand-logo:hover {
+    transform: translateY(-1px);
+}
+
+.brand-mark {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: 11px;
+    background: linear-gradient(145deg, #315ce8, #4b78ee);
+    box-shadow: 0 5px 12px rgba(49, 92, 232, 0.24);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 850;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.nav-btn {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    border-radius: 11px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+}
+
+.nav-btn-ghost {
+    border-color: #e1e7f0;
+    color: #33435a;
+    background: #ffffff;
+}
+
+.nav-btn-ghost:hover {
+    border-color: #cbd6e7;
+    background: #f5f8fc;
+}
+
+.nav-btn-solid {
+    color: #ffffff;
+    background: var(--brand);
+    box-shadow: 0 5px 12px rgba(49, 92, 232, 0.16);
+}
+
+.nav-btn-solid:hover {
+    background: var(--brand-dark);
+    box-shadow: 0 8px 16px rgba(49, 92, 232, 0.23);
+}
+
+.nav-btn-logout {
+    border-color: #f0d7dc;
+    color: #ad3b4b;
+    background: #fffafb;
+}
+
+.nav-btn-logout:hover {
+    border-color: #e8bcc4;
+    background: #fff1f3;
+}
+
+@media (max-width: 560px) {
+    .navbar-inner {
+        padding: 11px 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .brand-logo {
+        gap: 7px;
+        font-size: 0.92rem;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .nav-btn {
+        min-height: 38px;
+        padding: 7px 10px;
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 300px) {
+    .navbar-inner {
+        gap: 8px;
+        padding-right: 9px;
+        padding-left: 9px;
+    }
+
+    .brand-logo {
+        gap: 6px;
+        font-size: 0.82rem;
+    }
+
+    .brand-mark {
+        width: 28px;
+        height: 28px;
+        border-radius: 9px;
+        font-size: 0.85rem;
+    }
+
+    .nav-actions {
+        gap: 4px;
+    }
+
+    .nav-btn {
+        min-height: 34px;
+        padding: 6px 7px;
+        font-size: 0.7rem;
+    }
+}

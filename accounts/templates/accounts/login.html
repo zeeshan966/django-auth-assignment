@@ -1,0 +1,42 @@
+{% extends "accounts/base.html" %}
+{% load static %}
+
+{% block title %}Log In{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="card login-card">
+    <div class="card-header">
+        <h1>Log In</h1>
+        <p>Sign in with a six-digit code or use Face ID or biometrics.</p>
+    </div>
+
+    <form method="post" id="otp-login-form" novalidate>
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_identifier">Email or Phone Number</label>
+            {{ form.identifier }}
+            {% for err in form.identifier.errors %}<div class="error-text">{{ err }}</div>{% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary">Send 6-Digit Code</button>
+    </form>
+
+    <div class="divider"><span>OR</span></div>
+
+    <button type="button" id="biometric-login-btn" class="btn btn-secondary biometric-login-btn">
+        Login with Face ID / Biometrics
+    </button>
+    <div id="biometric-status" class="error-text biometric-status"></div>
+
+    <div class="footer-link">
+        New user? <a href="{% url 'signup' %}">Create an account</a>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'accounts/js/biometrics.js' %}"></script>
+{% endblock %}

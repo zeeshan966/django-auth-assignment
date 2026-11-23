@@ -1,0 +1,36 @@
+.signup-card {
+    padding: clamp(28px, 5.2vw, 48px);
+}
+
+.signup-card .card-header {
+    max-width: 520px;
+    margin-bottom: 30px;
+}
+
+.signup-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+}
+
+.form-note {
+    margin: -2px 0 20px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.signup-submit-btn {
+    min-height: 54px;
+}
+
+@media (max-width: 560px) {
+    .signup-fields {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .signup-card .card-header {
+        margin-bottom: 24px;
+    }
+}

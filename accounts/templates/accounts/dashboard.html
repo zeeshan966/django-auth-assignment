@@ -1,0 +1,64 @@
+{% extends "accounts/base.html" %}
+{% load static %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'accounts/css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="card dashboard-card">
+    <div class="profile-heading">
+        <div class="profile-avatar" aria-hidden="true">{{ user_obj.surname|slice:":1"|upper }}</div>
+        <div class="profile-welcome">
+            <span class="eyebrow">YOUR ACCOUNT</span>
+            <h1>Welcome, {{ user_obj.surname }}</h1>
+            <p>Your profile and security details are all in one place.</p>
+        </div>
+    </div>
+
+    <section class="account-status" aria-label="Account security status">
+        <span class="status-icon" aria-hidden="true">✓</span>
+        <span><strong>Account secure</strong><small>Active on this device</small></span>
+        <span class="status-pill">Protected</span>
+    </section>
+
+    <section class="profile-details" aria-labelledby="profile-details-title">
+        <div class="details-heading">
+            <h2 id="profile-details-title">Personal details</h2>
+            <span>ACCOUNT PROFILE</span>
+        </div>
+        <dl class="meta-list">
+            <div class="meta-item">
+                <dt>Surname</dt>
+                <dd>{{ user_obj.surname }}</dd>
+            </div>
+            <div class="meta-item">
+                <dt>Email address</dt>
+                <dd>{{ user_obj.email|default:"Not provided" }}</dd>
+            </div>
+            <div class="meta-item">
+                <dt>Phone number</dt>
+                <dd>{{ user_obj.phone|default:"Not provided" }}</dd>
+            </div>
+            <div class="meta-item">
+                <dt>Date of birth</dt>
+                <dd>{{ user_obj.dob|default:"Not provided" }}</dd>
+            </div>
+        </dl>
+    </section>
+
+    <div class="dashboard-actions">
+        <button type="button" id="register-biometric-btn" class="btn btn-secondary biometric-register-btn">
+            Register Face ID / Biometrics on This Device
+        </button>
+        <a href="{% url 'logout' %}" class="btn logout-btn">Log Out</a>
+    </div>
+    <div id="biometric-status" class="error-text biometric-status"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'accounts/js/biometrics.js' %}"></script>
+{% endblock %}

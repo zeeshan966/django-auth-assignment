@@ -1,0 +1,55 @@
+.login-card {
+    max-width: 520px;
+}
+
+.login-card .card-header {
+    margin-bottom: 30px;
+}
+
+.login-card .card-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.25rem);
+}
+
+.login-card .card-header p {
+    color: #66758a;
+    font-size: 1.02rem;
+    font-weight: 600;
+}
+
+.login-card .form-group label {
+    color: #526176;
+    font-size: 0.92rem;
+    font-weight: 750;
+}
+
+.login-card .form-group input {
+    min-height: 54px;
+    font-size: 1.03rem;
+}
+
+.login-card .btn {
+    min-height: 54px;
+    font-size: 1rem;
+}
+
+.login-card .footer-link {
+    color: #66758a;
+    font-size: 0.96rem;
+    font-weight: 650;
+}
+
+.biometric-login-btn {
+    min-height: 52px;
+}
+
+.biometric-status {
+    min-height: 1.3em;
+    margin-top: 8px;
+    text-align: center;
+}
+
+@media (max-width: 560px) {
+    .login-card .card-header {
+        margin-bottom: 24px;
+    }
+}

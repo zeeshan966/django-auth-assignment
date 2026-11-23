@@ -1,0 +1,26 @@
+.otp-card {
+    max-width: 520px;
+}
+
+.otp-card .card-header {
+    margin-bottom: 24px;
+}
+
+.otp-input {
+    min-height: 66px !important;
+    padding-left: 22px !important;
+    letter-spacing: 0.42em;
+    font-size: 1.55rem !important;
+    font-weight: 700;
+    text-align: center;
+}
+
+.otp-verify-btn {
+    min-height: 54px;
+}
+
+@media (max-width: 380px) {
+    .otp-input {
+        letter-spacing: 0.28em;
+    }
+}
